@@ -17,6 +17,10 @@ else
   endif
 endif
 
+if cc.get_id() == 'msvc'
+  link_args += '/MACHINE:X64'
+endif
+
 src = files([
   'adler32.c',
   'crc32.c',
